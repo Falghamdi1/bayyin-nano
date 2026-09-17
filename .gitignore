@@ -7,3 +7,4 @@ HF_TOKEN
 .DS_Store
 node_modules/
 .vercel
+.claude/

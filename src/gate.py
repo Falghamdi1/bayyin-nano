@@ -34,6 +34,7 @@ def validate_preserved_facts(original: str, simplified: str) -> dict:
         "original_numbers": sorted(original_numbers),
         "simplified_numbers": sorted(simplified_numbers),
         "missing_numbers": sorted(missing),
+        "facts_detected": bool(original_numbers),
         "passed": len(missing) == 0,
     }
 

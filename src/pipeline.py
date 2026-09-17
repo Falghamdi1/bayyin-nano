@@ -26,6 +26,7 @@ def simplify_and_validate(original: str) -> dict:
         "simplified": simplified,
         "gate_passed": check["passed"],
         "missing_numbers": check["missing_numbers"],
+        "facts_detected": check["facts_detected"],
         "input_tokens": result["input_tokens"],
         "output_tokens": result["output_tokens"],
         "truncated": result["truncated"],

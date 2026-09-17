@@ -106,24 +106,27 @@ Open `notebooks/arabic_simplifier.ipynb` in Google Colab with a GPU runtime. Run
 ```
 bayyin/
 ├── app.py                — run this: python app.py
+├── ui.py                 — the Gradio interface (shared with the Colab notebook, which embeds it inline)
 ├── src/
-│   ├── model.py           — Qwen/Qwen2.5-3B-Instruct, lazy-loaded once
+│   ├── model.py           — Qwen/Qwen2.5-3B-Instruct, lazy-loaded once, ZeroGPU-ready
 │   ├── prompts.py         — the one system prompt, injection-resistant
 │   ├── gate.py            — the deterministic code gate, with self-tests
 │   └── pipeline.py        — wires the three into one function
 ├── notebooks/
 │   ├── arabic_simplifier_s1.ipynb   — Qwen, plain-assistant prompt
 │   ├── arabic_simplifier_s2.ipynb   — Qwen, evaluated (10/10 · 10/10 · 6/10)
-│   └── arabic_simplifier.ipynb      — Colab version: model-agnostic, ALLaM + Qwen, integrity-checked
+│   └── arabic_simplifier.ipynb      — Colab version: model-agnostic, ALLaM + Qwen, integrity-checked, embeds ui.py's interface
 ├── data/
 │   └── test_notices.json  — the 10 evaluation notices
 ├── deploy/
 │   └── index.html         — static results showcase (Vercel-ready, no live inference)
+├── DEPLOYMENT.md
+├── DEMO_RUNBOOK.md
 ├── requirements.txt
 └── .gitignore
 ```
 
-**Why two versions exist.** `app.py` is the clean, GitHub-runnable version — locked to Qwen2.5-3B-Instruct, the model both evaluations actually used, with a redesigned interface. `notebooks/arabic_simplifier.ipynb` is the Colab version with the ALLaM comparison — kept separate because that model's live load is not yet confirmed. Don't let anyone present `app.py` as including the ALLaM comparison; it doesn't.
+**Why two versions exist.** `app.py` is the clean, GitHub-runnable version — locked to Qwen2.5-3B-Instruct, the model both evaluations actually used. `notebooks/arabic_simplifier.ipynb` is the Colab version with the ALLaM comparison — kept separate because that model's live load is not yet confirmed. Don't let anyone present `app.py` as including the ALLaM comparison; it doesn't. Both share the same interface: `app.py` imports `ui.py` directly, and the notebook embeds the same file's content inline in its own UI cell (so the notebook still works standalone in Colab, without cloning this repo) — keep the two in sync by hand when editing either one.
 
 ## Team
 
