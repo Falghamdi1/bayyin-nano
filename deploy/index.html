@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>بيّن — Bayyin (backup)</title>
+<style>
+:root{--paper:#F2EFE8;--ink:#17150F;--soft:#544F44;--rule:#DCD5C6;--accent:#2C4A6E;--ok:#215C44;--okbg:rgba(44,110,82,.1);--flag:#8E2025;--flagbg:rgba(179,40,46,.1);}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:"Noto Naskh Arabic","Geeza Pro",Tahoma,serif;line-height:1.7;padding:0}
+.wrap{max-width:760px;margin:0 auto;padding:40px 20px 80px}
+h1{font-size:clamp(26px,5vw,38px);font-weight:600;margin-bottom:6px}
+.sub{color:var(--soft);font-size:15px;margin-bottom:28px}
+.badge{display:inline-block;background:var(--flagbg);color:var(--flag);border:1px solid var(--flag);border-radius:20px;padding:5px 14px;font-size:12.5px;font-weight:600;margin-bottom:28px}
+section{margin-bottom:36px}
+h2{font-size:19px;font-weight:600;margin-bottom:10px;color:var(--accent)}
+.card{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:18px 20px;margin-bottom:12px}
+.example .lbl{font-size:11.5px;color:var(--soft);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+.example .txt{font-size:16px;margin-bottom:14px}
+.figs{display:flex;gap:24px;flex-wrap:wrap;margin-top:10px}
+.fig .n{font-size:34px;font-weight:700;color:var(--accent)}
+.fig .l{font-size:12.5px;color:var(--soft);max-width:16ch}
+.finding{border-inline-start:4px solid var(--accent);background:#fff;padding:14px 18px;border-radius:0 8px 8px 0;font-size:14.5px}
+.disclosure{background:var(--flagbg);border:1px solid var(--flag);color:var(--flag);border-radius:8px;padding:12px 16px;font-size:13.5px;margin-top:16px}
+footer{color:var(--soft);font-size:12.5px;text-align:center;margin-top:50px;border-top:1px solid var(--rule);padding-top:20px}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<span class="badge">نسخة احتياطية — نتائج مسجّلة، مو استدعاء حي</span>
+<h1>بيّن · Bayyin</h1>
+<p class="sub">بيّن — Arabic Notice Simplifier · نسخة احتياطية للعرض الحي · Tuwaiq Academy GenAI Bootcamp</p>
+
+<section>
+<h2>المشكلة</h2>
+<div class="card">الإشعارات الرسمية العربية صعبة على كثير من القراء يتصرفون بناءً عليها صح — سائح أو مقيم جديد يقرأ إشعار جهة حكومية أو سياحية.</div>
+</section>
+
+<section>
+<h2>مثال حقيقي، مسجّل من التشغيل الفعلي</h2>
+<div class="card example">
+  <div class="lbl">الأصلي</div>
+  <div class="txt">تعلن الهيئة العامة للسياحة عن تمديد فترة التسجيل في مهرجان الرياض الموسمي حتى تاريخ 15 نوفمبر، على أن يتم استيفاء الرسوم البالغة 250 ريالاً قبل هذا الموعد.</div>
+  <div class="lbl">المبسّط</div>
+  <div class="txt">تعلن الهيئة العامة للسياحة تمديد فترة تسجيل مهرجان الرياض الموسمي حتى 15 نوفمبر، ويجب دفع الرسوم 250 ريال قبل هذا التاريخ.</div>
+  <div style="font-size:12.5px;color:var(--ok)">✅ الأرقام والتواريخ محفوظة — 250، 15 نوفمبر</div>
+</div>
+</section>
+
+<section>
+<h2>نتائج التقييم — ١٠ إشعارات، حكم بشري</h2>
+<div class="card">
+  <div class="figs">
+    <div class="fig"><div class="n">10/10</div><div class="l">المعنى محفوظ</div></div>
+    <div class="fig"><div class="n">10/10</div><div class="l">فعلاً أبسط</div></div>
+    <div class="fig"><div class="n">6/10</div><div class="l">اجتاز فحص البوابة الآلي</div></div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>أهم ملاحظة</h2>
+<div class="finding">البوابة الآلية أشد صرامة من الحكم البشري — المعنى محفوظ ١٠/١٠ حسب التقييم البشري، لكن فحص الأرقام الآلي نجح في ٦ حالات فقط من ١٠. هذا فرق حقيقي بين التقييم البشري والآلي، مو خطأ نخفيه.</div>
+</section>
+
+<section>
+<h2>الموديلات</h2>
+<div class="card" style="font-size:14px">
+  <b>Qwen/Qwen2.5-3B-Instruct</b> — الموديل الأساسي، مُختبر ويشتغل، FP16<br>
+  <b>humain-ai/ALLaM-7B-Instruct-preview</b> — موديل عربي متخصص للمقارنة، الكود جاهز بتحقق من صحة الإصدار والتوكنايزر، التشغيل الكامل قيد التأكيد
+</div>
+</section>
+
+<div class="disclosure">
+⚠️ هذه الصفحة تعرض نتائج حقيقية مسجّلة من تشغيل فعلي للنظام، وليست استدعاءً حياً للموديل. جميع الإشعارات المستخدمة في الاختبار مُختلَقة وليست حقيقية.
+</div>
+
+<footer>
+Tuwaiq Academy · Generative AI Application Engineering Bootcamp<br>
+<a href="#">GitHub repository</a>
+</footer>
+
+</div>
+</body>
+</html>
