@@ -7,7 +7,7 @@ sdk: gradio
 sdk_version: 4.44.1
 app_file: app.py
 pinned: false
-short_description: يبسّط الإشعارات العربية الرسمية بنموذج ذكاء اصطناعي، مع فحص آلي للأرقام والتواريخ
+short_description: Arabic notice simplifier with a number/date integrity gate
 ---
 
 # Bayyin · بيّن
